@@ -34,16 +34,15 @@ class PerfilController extends Controller implements HasMiddleware
             'username' => ['required','unique:users,username,'.Auth::user()->id,'min:3','max:20','not_in:twitter,editar-perfil'],
             'email' => ['required', 'email', 'max:60', 'unique:users,email,'.Auth::user()->id]
         ]);
-
         if(!Hash::check($request->password, Auth::user()->password)){
             return back()->with('mensaje','Password Incorrecto');
         }
-
+        
         if($request->imagen){
             $imagen = $request->file('imagen');
-
+            
             $nombreImagen = Str::uuid() . "." . $imagen->extension();
-
+            
             $manager = new ImageManager(new Driver());
 
             $imagenServidor = $manager::imagick()->read($imagen);

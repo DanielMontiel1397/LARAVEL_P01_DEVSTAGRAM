@@ -26,7 +26,6 @@ addEventListener('DOMContentLoaded', ()=>{
     
     
     dropzone.on('success',(file,response) => {
-        console.log(response.imagen);
         document.querySelector('[name="imagen"]').value = response.imagen;
     })
     
@@ -35,7 +34,7 @@ addEventListener('DOMContentLoaded', ()=>{
     })
     
     dropzone.on('error',(file,message) => {
-        console.log(message);
+        console.log('El mensaje de error es: ', message);
     })
 
 })

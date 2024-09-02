@@ -21,7 +21,7 @@ class ImagenController extends Controller
         $imagenServidor = $manager::imagick()->read($imagen);
         $imagenServidor->cover(1000,1000);
  
-        $imagenPath = public_path('uploads') . '/' . $nombreImagen;
+        $imagenPath = public_path('/uploads') . '/' . $nombreImagen;
  
         $imagenServidor->save($imagenPath);
 
