@@ -52,7 +52,6 @@
                         id="imagen" 
                         name="imagen" 
                         class="border p-3 w-full rounded-lg"
-                        value=""
                         accept=".jpg .jpeg .png"
                     >
                 </div>
